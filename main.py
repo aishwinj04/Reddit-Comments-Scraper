@@ -19,4 +19,23 @@ def get_post(post_link):
     return post
 
 
+# get top comments given the reddit post
+def get_comments(post):
+
+    post.comments.replace_more(limit=0)  # only top level comments
+    data = []
+
+    # add into dictionary for df
+    for comment in post.comments:
+        data.append({
+            'User': comment.author,
+            'Comment': comment.body,
+            'Score': comment.score
+        })
+
+    table = df.DataFrame(data)
+    return table
+
+# create the output file
+
 
