@@ -30,4 +30,7 @@ export r_username='your_reddit_username'
 export r_password='your_reddit_password'
 ```
 
-
+#### Sample post links to test:
+- https://www.reddit.com/r/books/comments/13ka9ky/what_is_a_book_you_think_everyone_needs_to_read/
+- https://www.reddit.com/r/ExperiencedDevs/comments/oket8j/whats_your_favorite_interview_question/
+- https://www.reddit.com/r/AskReddit/comments/id46ym/what_simple_life_hack_should_everyone_know/
