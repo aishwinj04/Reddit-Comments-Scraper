@@ -40,21 +40,24 @@ def get_comments(post):
 
 
 def to_csv(table, filename):
-    table.to_csv(f'csv_outputs/{filename}.csv', index=False)
+    table.to_csv(f'csv_outputs/{filename}.csv')
 
 
 def main():
-    link = input('Copy & Paste the link to the Reddit Post below:\n')
-    post = get_post(link)
-    data = get_comments(post)
+    while True:
+        link = input('Copy & Paste the link to the Reddit Post below (Q to Exit):\n')
+        if link.lower() == 'q':
+            print('Exiting...')
+            break
+        post = get_post(link)
+        data = get_comments(post)
 
-    filename = input('Processing Complete....\nEnter filename (without extension) to save to: ')
+        filename = input('Processing Complete....\nEnter filename (without extension) to save to: ')
 
-    to_csv(data, filename)
+        to_csv(data, filename)
 
-    print('Done!')
-    print(f'Total comments: {len(post.comments)}')
-
+        print('Done!')
+        print(f'Total comments: {len(post.comments)}')
 
 if __name__ == '__main__':
     main()
